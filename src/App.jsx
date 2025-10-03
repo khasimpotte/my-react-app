@@ -5,6 +5,9 @@ import Home from "./home";
 import {ThemeContext} from "./ThemeContext.js"
 
 
+import { BrowserRouter } from "react-router-dom";
+
+
 import { useState } from "react";
 
 function App(){
@@ -35,7 +38,16 @@ function App(){
 
 
     <ThemeContext.Provider value={{ darkmode, handleToggleDarkMode }}>
-      <Home />
+
+      <BrowserRouter>
+      
+        <Home />
+      
+      </BrowserRouter>
+        
+    
+    
+    
     </ThemeContext.Provider>
 
 

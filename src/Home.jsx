@@ -1,9 +1,14 @@
 import styles from './css/Home.module.css'
 import IncidentList from "./IncidentList";
 import Welcome from "./Welcome";
-import { useState ,useReducer, useContext } from 'react';
+// import { useState } from 'react';
+import { useReducer, useContext } from 'react';
 
 import { ThemeContext } from "./ThemeContext";
+
+
+import {Routes, Route, Link} from 'react-router-dom'
+
 
 import data from './assets/incidents.json'
 
@@ -26,10 +31,10 @@ function Home(){
     const user={prefix:"Mr.",firstName:"Khasim",lastName:"Potte"};
 
 
-    const [PageContent,setPageContent] =useState('Home');
-    function handleClick(e){
-        setPageContent(e.target.innerText);
-    }
+    // const [PageContent,setPageContent] =useState('Home');
+    // function handleClick(e){
+    //     setPageContent(e.target.innerText);
+    // }
 
 
     // const [incidents,setIncidents]=useState(data)
@@ -66,15 +71,34 @@ function Home(){
                 <span>Time since last incident : {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}</span>
                 <nav>
                     <ul className={styles.list}>
-                        <li className={styles.listItem}><a className={styles.link} onClick={handleClick} href='#'>Home</a></li>
-                        <li className={styles.listItem}><a className={styles.link} onClick={handleClick} href='#'>Incidents</a></li>
+                        {/* <li className={styles.listItem}><a className={styles.link} onClick={handleClick} href='#'>Home</a></li>
+                        <li className={styles.listItem}><a className={styles.link} onClick={handleClick} href='#'>Incidents</a></li> */}
+
+                        {/* <li className={styles.listItem}><Link to='/' className={styles.link} >Home</Link></li>
+                        <li className={styles.listItem}><Link to='/incidents' className={styles.link} >Incidents</Link></li> */}
+
+                        
+                        <Link to='/' className={styles.link} >Home</Link>
+                        <Link to='/incidents' className={styles.link} >Incidents</Link>
+
+
                     </ul>
                     <button onClick={handleToggleDarkMode}>{darkmode === 'light' ? 'Dark' : 'Light'} Mode</button>
                 </nav>
             </header>
             {/* <h1>Welcome..!</h1> */}
             {/* <IncidentList/> */}
-            {PageContent=='Home'?<Welcome/>:<IncidentList incidents={incidents} onDelete={handleDelete} addInc={addInc} />}
+            {/* {PageContent=='Home'?<Welcome/>:<IncidentList incidents={incidents} onDelete={handleDelete} addInc={addInc} />} */}
+
+
+            <Routes>
+
+                <Route path='/' element={<Welcome/>}></Route>
+                <Route path='/incidents' element={<IncidentList incidents={incidents} onDelete={handleDelete} addInc={addInc} />}></Route>
+
+            </Routes>
+
+
         </>
     )
 }

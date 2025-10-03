@@ -34,7 +34,7 @@ function IncidentList({ incidents, onDelete, addInc }) {
 
 
   const theme=useContext(ThemeContext);
-  const incidentListClass=`${styles}`
+  // const incidentListClass=`${styles}`
 
 
   return (
