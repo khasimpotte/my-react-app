@@ -5,7 +5,7 @@ import { ThemeContext } from './ThemeContext.js';
 import Incident from './Incident.jsx';
 
 function IncidentList({ incidents, onDelete, addInc }) {
-  // form state (only for new incident input)
+  
   const [newIncident, setNewIncident] = useState({
     incident_id: '',
     title: '',
@@ -22,7 +22,7 @@ function IncidentList({ incidents, onDelete, addInc }) {
     e.preventDefault();
     addInc(newIncident);
 
-    // reset form
+    
     setNewIncident({
       incident_id: '',
       title: '',
@@ -33,7 +33,8 @@ function IncidentList({ incidents, onDelete, addInc }) {
   }
 
 
-  const theme=useContext(ThemeContext)
+  const theme=useContext(ThemeContext);
+  const incidentListClass=`${styles}`
 
 
   return (
