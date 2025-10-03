@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import axios from "axios";
 
 function Welcome(){
 
@@ -10,9 +11,17 @@ function Welcome(){
         const signal=controller.signal;
 
         async function fetchData(){
-            let results=await fetch('https://api.chucknorris.io/jokes/random',{signal});
-            let parsedResponse=await results.json();
-            setJoke(parsedResponse.value);
+            // let results=await fetch('https://api.chucknorris.io/jokes/random',{signal});
+            // let parsedResponse=await results.json();
+            // setJoke(parsedResponse.value);
+            try{
+                let results=await axios.get('https://api.chucknorris.io/jokes/random',{signal});
+                setJoke(results.data.value);
+            }
+            catch(err){
+                console.error(err);
+            }
+            
         }
         fetchData();
         return ()=>{controller.abort();}
