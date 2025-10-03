@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import styles from './css/Incident.module.css'
-
+import {Button} from '@mui/material'
 
 // function Incident(props){
 function Incident({incident,onDelete}){
@@ -25,7 +25,8 @@ function Incident({incident,onDelete}){
                     <li>Title : {title}</li>
                     <li>Status : {status}</li>
                     <li>Priority : {priority}</li>
-                    <button onClick={onDelete} type="button">Delete</button>
+                    {/* <button onClick={onDelete} type="button">Delete</button> */}
+                    <Button sx={{mt:"10px"}} variant='contained' color='error' onClick={onDelete}>Delete</Button>
                 </ul>
                 
             </div>
