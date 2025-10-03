@@ -1,0 +1,45 @@
+.header{
+    margin: 0%;
+    background-color: rgb(104, 50, 155);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body{
+    margin: 0%;
+}
+
+
+.list{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    margin: 0px 10px;
+}
+
+/* .listItem{
+    display: flex;
+    justify-content: space-around;
+} */
+
+.link:hover{
+    color: rgb(245, 217, 217);
+    text-decoration: underline;
+}
+
+
+/* .text{
+    font-style: italic;
+}
+
+.date{
+    color: red;
+} */

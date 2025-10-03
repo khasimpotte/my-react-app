@@ -1,0 +1,22 @@
+.box{
+    margin: 20px;
+    background-color: rgb(6, 125, 155);
+    border-radius: 7px;
+    display:inline-block;
+    width: 250px;
+    
+}
+
+.list{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: white;
+}
+
+button{
+    border-radius: 5px;
+    background-color: rgb(245, 221, 221);
+}
+
