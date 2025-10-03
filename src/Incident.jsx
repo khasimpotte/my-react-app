@@ -26,6 +26,7 @@ function Incident({incident,onDelete}){
                     <li>Status : {status}</li>
                     <li>Priority : {priority}</li>
                     {/* <button onClick={onDelete} type="button">Delete</button> */}
+                    
                     <Button sx={{mt:"10px"}} variant='contained' color='error' onClick={onDelete}>Delete</Button>
                 </ul>
                 
